@@ -1,0 +1,1 @@
+#Beta: Laravel Search Console

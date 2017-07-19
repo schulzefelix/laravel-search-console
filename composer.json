@@ -1,0 +1,39 @@
+{
+    "name": "schulzefelix/laravel-search-console",
+    "type": "library",
+    "description": "A Laravel package to retrieve data from Google Search Console",
+    "keywords": [
+        "laravel-search-console",
+        "laravel",
+        "search console",
+        "google",
+        "webmaster tools"
+    ],
+    "homepage": "https://github.com/schulzefelix/laravel-search-console",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Schulze",
+            "email": "github@schulze.co",
+            "homepage": "https://schulze.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "illuminate/support": "~5.1",
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SchulzeFelix\\SearchConsole\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SchulzeFelix\\SearchConsole\\Tests\\": "tests"
+        }
+    },
+}
