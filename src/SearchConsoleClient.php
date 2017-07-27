@@ -28,6 +28,11 @@ class SearchConsoleClient
         $this->googleClient = $googleClient;
     }
 
+    /**
+     * @param string $siteUrl
+     * @param integer $rows
+     * @param \Google_Service_Webmasters_SearchAnalyticsQueryRequest $request
+     */
     public function performQuery($siteUrl, $rows, $request): Collection
     {
         $searchanalyticsResource = $this->getWebmastersService()->searchanalytics;
