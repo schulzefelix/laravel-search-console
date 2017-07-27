@@ -6,7 +6,6 @@ use DateTime;
 use Carbon\Carbon;
 use SchulzeFelix\SearchConsole\Exceptions\InvalidPeriod;
 
-
 class Period
 {
     /** @var \DateTime */
