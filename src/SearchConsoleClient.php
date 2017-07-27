@@ -44,7 +44,7 @@ class SearchConsoleClient
 
             $backoff = new ExponentialBackoff(10);
             $response = $backoff->execute(function () use ($searchanalyticsResource, $siteUrl, $request) {
-                    return $searchanalyticsResource->query($siteUrl, $request, $this->queryOptParams);
+                return $searchanalyticsResource->query($siteUrl, $request, $this->queryOptParams);
             });
 
             // Stop if no more rows returned
@@ -115,5 +115,4 @@ class SearchConsoleClient
     {
         return new Google_Service_Webmasters($this->googleClient);
     }
-
 }

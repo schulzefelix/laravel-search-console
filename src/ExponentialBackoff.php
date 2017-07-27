@@ -2,7 +2,6 @@
 
 namespace SchulzeFelix\SearchConsole;
 
-
 /**
  * Exponential backoff implementation.
  */

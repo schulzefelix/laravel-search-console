@@ -43,7 +43,6 @@ class SearchConsoleServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(SearchConsole::class, 'laravel-searchconsole');
-
     }
 
     protected function guardAgainstInvalidConfiguration(array $searchConsoleConfig = null)
@@ -55,7 +54,5 @@ class SearchConsoleServiceProvider extends ServiceProvider
         if ($searchConsoleConfig['auth_type'] == 'oauth_json' && ! file_exists($searchConsoleConfig['connections']['oauth_json']['auth_config'])) {
             throw InvalidConfiguration::credentialsJsonDoesNotExist($searchConsoleConfig['connections']['oauth_json']['auth_config']);
         }
-
     }
-
 }
