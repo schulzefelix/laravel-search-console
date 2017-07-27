@@ -50,6 +50,7 @@ class SearchConsoleClientFactory
     {
         $client->setApplicationName($application_name . ' (gzip)');
 
+        $options = [];
         $options['base_uri'] = Google_Client::API_BASE_PATH;
         $options['headers'] = [
             'User-Agent' => $application_name . ' (gzip)',

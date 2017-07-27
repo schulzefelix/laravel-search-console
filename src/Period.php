@@ -2,19 +2,18 @@
 
 namespace SchulzeFelix\SearchConsole;
 
-use DateTime;
 use Carbon\Carbon;
 use SchulzeFelix\SearchConsole\Exceptions\InvalidPeriod;
 
 class Period
 {
-    /** @var \DateTime */
+    /** @var Carbon */
     public $startDate;
 
-    /** @var \DateTime */
+    /** @var Carbon */
     public $endDate;
 
-    public static function create(DateTime $startDate, $endDate): Period
+    public static function create(Carbon $startDate, Carbon $endDate): Period
     {
         return new static($startDate, $endDate);
     }
@@ -34,7 +33,7 @@ class Period
         return new static($startDate, $endDate);
     }
 
-    public function __construct(DateTime $startDate, DateTime $endDate)
+    public function __construct(Carbon $startDate, Carbon $endDate)
     {
         if ($startDate > $endDate) {
             throw InvalidPeriod::startDateCannotBeAfterEndDate($startDate, $endDate);

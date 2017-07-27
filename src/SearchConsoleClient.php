@@ -65,6 +65,8 @@ class SearchConsoleClient
                  */
 
                 $uniqueHash = md5(str_random());
+                $item = [];
+
                 if (count($row->getKeys())) {
                     $item = array_combine($request->getDimensions(), $row->getKeys());
                     $uniqueHash = md5(implode('', $row->getKeys()) . $request->getSearchType());
