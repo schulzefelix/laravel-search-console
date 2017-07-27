@@ -32,6 +32,7 @@ class SearchConsoleClient
      * @param string $siteUrl
      * @param integer $rows
      * @param \Google_Service_Webmasters_SearchAnalyticsQueryRequest $request
+     * @return Collection
      */
     public function performQuery($siteUrl, $rows, $request): Collection
     {
