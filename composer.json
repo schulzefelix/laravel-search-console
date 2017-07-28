@@ -41,7 +41,7 @@
                 "SchulzeFelix\\SearchConsole\\SearchConsoleServiceProvider"
             ],
             "aliases":{
-                "Analytics": "SchulzeFelix\\SearchConsole\\SearchConsoleFacade"
+                "SearchConsole": "SchulzeFelix\\SearchConsole\\SearchConsoleFacade"
             }
         }
     },
