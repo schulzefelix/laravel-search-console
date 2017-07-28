@@ -3,8 +3,8 @@
 namespace SchulzeFelix\SearchConsole;
 
 use Google_Client;
-use Google_Service_Webmasters;
 use GuzzleHttp\Client;
+use Google_Service_Webmasters;
 use Illuminate\Support\Collection;
 
 class SearchConsoleClient
@@ -30,7 +30,7 @@ class SearchConsoleClient
 
     /**
      * @param string $siteUrl
-     * @param integer $rows
+     * @param int $rows
      * @param \Google_Service_Webmasters_SearchAnalyticsQueryRequest $request
      * @return Collection
      */
@@ -43,7 +43,7 @@ class SearchConsoleClient
         $dataRows = new Collection();
 
         while ($currentRequest < $maxQueries) {
-            $startRow = ($currentRequest-1) * self::CHUNK_SIZE;
+            $startRow = ($currentRequest - 1) * self::CHUNK_SIZE;
 
             $request->setRowLimit(self::CHUNK_SIZE);
             $request->setStartRow($startRow);
@@ -70,7 +70,7 @@ class SearchConsoleClient
 
                 if (count($row->getKeys())) {
                     $item = array_combine($request->getDimensions(), $row->getKeys());
-                    $uniqueHash = md5(implode('', $row->getKeys()) . $request->getSearchType());
+                    $uniqueHash = md5(implode('', $row->getKeys()).$request->getSearchType());
                 }
 
                 $item['clicks'] = $row->getClicks();
@@ -95,7 +95,6 @@ class SearchConsoleClient
 
     /**
      * @param string $quotaUser
-     *
      */
     public function setQuotaUser(string $quotaUser)
     {
@@ -103,7 +102,7 @@ class SearchConsoleClient
 
         $guzzleConfig = $this->googleClient->getHttpClient()->getConfig();
 
-        array_set($guzzleConfig, 'base_uri', Google_Client::API_BASE_PATH . '?quotaUser=' . $quotaUser);
+        array_set($guzzleConfig, 'base_uri', Google_Client::API_BASE_PATH.'?quotaUser='.$quotaUser);
 
         $guzzleClient = new Client($guzzleConfig);
 
@@ -117,7 +116,6 @@ class SearchConsoleClient
     {
         $this->googleClient->setAccessToken($accessToken);
     }
-
 
     public function getWebmastersService(): Google_Service_Webmasters
     {

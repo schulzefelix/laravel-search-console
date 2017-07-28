@@ -3,9 +3,9 @@
 namespace Spatie\Analytics\Tests;
 
 use Carbon\Carbon;
-use SchulzeFelix\SearchConsole\Exceptions\InvalidPeriod;
 use PHPUnit\Framework\TestCase;
 use SchulzeFelix\SearchConsole\Period;
+use SchulzeFelix\SearchConsole\Exceptions\InvalidPeriod;
 
 class PeriodTest extends TestCase
 {
