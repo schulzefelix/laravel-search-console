@@ -49,5 +49,8 @@
         "psr-4": {
             "SchulzeFelix\\SearchConsole\\Tests\\": "tests"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
