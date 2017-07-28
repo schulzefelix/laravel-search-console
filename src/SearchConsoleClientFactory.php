@@ -3,8 +3,8 @@
 namespace SchulzeFelix\SearchConsole;
 
 use Google_Client;
-use Google_Service_Webmasters;
 use GuzzleHttp\Client;
+use Google_Service_Webmasters;
 use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
 
 class SearchConsoleClientFactory
@@ -48,13 +48,13 @@ class SearchConsoleClientFactory
 
     private static function configureGzip(Google_Client $client, $application_name)
     {
-        $client->setApplicationName($application_name . ' (gzip)');
+        $client->setApplicationName($application_name.' (gzip)');
 
         $options = [];
         $options['base_uri'] = Google_Client::API_BASE_PATH;
         $options['headers'] = [
-            'User-Agent' => $application_name . ' (gzip)',
-            'Accept-Encoding' => 'gzip'
+            'User-Agent' => $application_name.' (gzip)',
+            'Accept-Encoding' => 'gzip',
         ];
 
         $guzzleClient = new Client($options);
