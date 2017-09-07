@@ -26,7 +26,7 @@ class SearchConsoleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/search-console.php', 'search-console');
+        $this->mergeConfigFrom(__DIR__ . '/../config/search-console.php', 'search-console');
 
         $searchConsoleConfig = config('search-console');
 
@@ -58,7 +58,7 @@ class SearchConsoleServiceProvider extends ServiceProvider
 
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/config/search-console.php');
+        $source = realpath(__DIR__ . '/../config/search-console.php');
 
         if ($this->app instanceof LaravelApplication) {
             $this->publishes([$source => config_path('search-console.php')]);
