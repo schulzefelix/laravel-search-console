@@ -129,11 +129,11 @@ class SearchConsoleClient
         $filters = [];
         foreach ($request->getDimensionFilterGroups() as $dimensionFilterGroup) {
             foreach ($dimensionFilterGroup->filters as $filter) {
-                $filters[] = $filter->dimension . $filter->expression . $filter->operator;
+                $filters[] = $filter->dimension.$filter->expression.$filter->operator;
             }
         }
         $filters = implode('', $filters);
 
-        return md5( $keys . $filters . $request->getSearchType() . $request->endDate . $request->startDate);
+        return md5($keys.$filters.$request->getSearchType().$request->endDate.$request->startDate);
     }
 }
