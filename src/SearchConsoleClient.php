@@ -70,7 +70,7 @@ class SearchConsoleClient
 
                 if (count($row->getKeys())) {
                     $item = array_combine($request->getDimensions(), $row->getKeys());
-                    $uniqueHash = md5(implode('', $row->getKeys()).$request->getSearchType());
+                    $uniqueHash = $this->getUniqueItemHash($row, $request);
                 }
 
                 $item['clicks'] = $row->getClicks();
@@ -120,5 +120,20 @@ class SearchConsoleClient
     public function getWebmastersService(): Google_Service_Webmasters
     {
         return new Google_Service_Webmasters($this->googleClient);
+    }
+
+    private function getUniqueItemHash($row, $request)
+    {
+        $keys = implode('', $row->getKeys());
+
+        $filters = [];
+        foreach ($request->getDimensionFilterGroups() as $dimensionFilterGroup) {
+            foreach ($dimensionFilterGroup->filters as $filter) {
+                $filters[] = $filter->dimension . $filter->expression . $filter->operator;
+            }
+        }
+        $filters = implode('', $filters);
+
+        return md5( $keys . $filters . $request->getSearchType() . $request->endDate . $request->startDate);
     }
 }
