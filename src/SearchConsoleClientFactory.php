@@ -33,7 +33,7 @@ class SearchConsoleClientFactory
 
     protected static function configureCache(Google_Client $client, $config)
     {
-        if( is_null($config['store']) ) {
+        if (is_null($config['store'])) {
             return;
         }
         $config = collect($config);
