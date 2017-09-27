@@ -98,6 +98,8 @@ class SearchConsoleClient
      */
     public function setQuotaUser(string $quotaUser)
     {
+        $quotaUser = md5($quotaUser);
+
         $this->queryOptParams['quotaUser'] = $quotaUser;
 
         $guzzleConfig = $this->googleClient->getHttpClient()->getConfig();
