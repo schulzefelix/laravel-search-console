@@ -119,6 +119,11 @@ class SearchConsoleClient
         $this->googleClient->setAccessToken($accessToken);
     }
 
+    public function getGoogleClient(): Google_Client
+    {
+        return $this->googleClient;
+    }
+
     public function getWebmastersService(): Google_Service_Webmasters
     {
         return new Google_Service_Webmasters($this->googleClient);

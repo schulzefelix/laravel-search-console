@@ -97,6 +97,23 @@ class SearchConsole
         return $this->client->performQuery($siteUrl, $rows, $request);
     }
 
+
+    public function isAccessTokenExpired()
+    {
+        $googleClient = $this->client->getGoogleClient();
+
+        $newToken = $googleClient->fetchAccessTokenWithRefreshToken();
+
+        if (isset($newToken['error'])) {
+            return true;
+        }
+
+        $googleClient->setAccessToken($newToken);
+
+        return $googleClient->isAccessTokenExpired();
+    }
+
+
     /*
      * Get the underlying Google_Service_Webmasters object. You can use this
      * to basically call anything on the Google Search Console API.
