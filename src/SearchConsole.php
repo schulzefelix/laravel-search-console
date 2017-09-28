@@ -97,7 +97,6 @@ class SearchConsole
         return $this->client->performQuery($siteUrl, $rows, $request);
     }
 
-
     public function isAccessTokenExpired()
     {
         $googleClient = $this->client->getGoogleClient();
@@ -112,7 +111,6 @@ class SearchConsole
 
         return $googleClient->isAccessTokenExpired();
     }
-
 
     /*
      * Get the underlying Google_Service_Webmasters object. You can use this
