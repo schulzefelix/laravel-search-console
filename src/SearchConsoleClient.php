@@ -119,16 +119,27 @@ class SearchConsoleClient
         $this->googleClient->setAccessToken($accessToken);
     }
 
+    /**
+     * @return Google_Client
+     */
     public function getGoogleClient(): Google_Client
     {
         return $this->googleClient;
     }
 
+    /**
+     * @return Google_Service_Webmasters
+     */
     public function getWebmastersService(): Google_Service_Webmasters
     {
         return new Google_Service_Webmasters($this->googleClient);
     }
 
+    /**
+     * @param $row
+     * @param $request
+     * @return string
+     */
     private function getUniqueItemHash($row, $request)
     {
         $keys = implode('', $row->getKeys());

@@ -45,6 +45,10 @@ class SearchConsoleServiceProvider extends ServiceProvider
         $this->app->alias(SearchConsole::class, 'laravel-searchconsole');
     }
 
+    /**
+     * @param array|null $searchConsoleConfig
+     * @throws InvalidConfiguration
+     */
     protected function guardAgainstInvalidConfiguration(array $searchConsoleConfig = null)
     {
         if ($searchConsoleConfig['auth_type'] == 'service_account' && ! file_exists($searchConsoleConfig['connections']['service_account']['application_credentials'])) {

@@ -9,6 +9,11 @@ use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
 
 class SearchConsoleClientFactory
 {
+
+    /**
+     * @param array $searchConsoleConfig
+     * @return SearchConsoleClient
+     */
     public static function createForConfig(array $searchConsoleConfig): SearchConsoleClient
     {
         $authenticatedClient = self::createAuthenticatedGoogleClient($searchConsoleConfig);
@@ -16,6 +21,10 @@ class SearchConsoleClientFactory
         return new SearchConsoleClient($authenticatedClient);
     }
 
+    /**
+     * @param array $config
+     * @return Google_Client
+     */
     public static function createAuthenticatedGoogleClient(array $config): Google_Client
     {
         $client = new Google_Client();
@@ -31,6 +40,10 @@ class SearchConsoleClientFactory
         return $client;
     }
 
+    /**
+     * @param Google_Client $client
+     * @param $config
+     */
     protected static function configureCache(Google_Client $client, $config)
     {
         if (is_null($config['store'])) {
@@ -49,6 +62,10 @@ class SearchConsoleClientFactory
         );
     }
 
+    /**
+     * @param Google_Client $client
+     * @param $application_name
+     */
     private static function configureGzip(Google_Client $client, $application_name)
     {
         $client->setApplicationName($application_name.' (gzip)');
@@ -65,6 +82,10 @@ class SearchConsoleClientFactory
         $client->setHttpClient($guzzleClient);
     }
 
+    /**
+     * @param Google_Client $client
+     * @param $config
+     */
     private static function configureAuthentication(Google_Client $client, $config)
     {
         switch ($config['auth_type']):

@@ -2,8 +2,9 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.0.0] - 2017-10-06
  - change default cache to null
-
+ - First stable release
 
 ## [0.1.0] - 2017-09-07
  - add compatibility with Laravel 5.5
