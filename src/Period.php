@@ -18,21 +18,6 @@ class Period
         return new static($startDate, $endDate);
     }
 
-    /**
-     * @param int $numberOfDays
-     * @return Period
-     *
-     * Modified to match Google Search Console delay in data (3 Days) and PDT timezone
-     */
-    public static function days(int $numberOfDays): Period
-    {
-        $endDate = Carbon::today('PDT')->subDays(3);
-
-        $startDate = Carbon::today('PDT')->subDays($numberOfDays + 2)->startOfDay();
-
-        return new static($startDate, $endDate);
-    }
-
     public function __construct(Carbon $startDate, Carbon $endDate)
     {
         if ($startDate > $endDate) {
