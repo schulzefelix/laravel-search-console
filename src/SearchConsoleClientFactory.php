@@ -9,7 +9,6 @@ use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
 
 class SearchConsoleClientFactory
 {
-
     /**
      * @param array $searchConsoleConfig
      * @return SearchConsoleClient
