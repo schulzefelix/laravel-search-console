@@ -30,11 +30,11 @@ class SearchConsoleServiceProvider extends ServiceProvider
 
         $searchConsoleConfig = config('search-console');
 
-        $this->app->singleton(SearchConsoleClient::class, function () use ($searchConsoleConfig) {
+        $this->app->bind(SearchConsoleClient::class, function () use ($searchConsoleConfig) {
             return SearchConsoleClientFactory::createForConfig($searchConsoleConfig);
         });
 
-        $this->app->singleton(SearchConsole::class, function () use ($searchConsoleConfig) {
+        $this->app->bind(SearchConsole::class, function () use ($searchConsoleConfig) {
             $this->guardAgainstInvalidConfiguration($searchConsoleConfig);
 
             $client = app(SearchConsoleClient::class);

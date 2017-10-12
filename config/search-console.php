@@ -47,15 +47,11 @@ return [
      | use to store it's data.  You may also add extra parameters that will
      | be passed on setCacheConfig (see docs for google-api-php-client).
      |
-     | WARNING: Don't enable cache if you handling with more than one access token.
-     | Google itself removed underlying cache library till they can fix the issue.
-     |
-     | store parameter: null, file
      | Optional parameters: "lifetime", "prefix"
      */
 
     'cache' => [
-        'store' => null,
+        'store' => 'file',
     ],
 
     /*

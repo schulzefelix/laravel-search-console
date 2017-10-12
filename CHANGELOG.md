@@ -2,6 +2,9 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.1.0] - 2017-10-12
+ - Clear Cache on setAccessToken()
+
 ## [1.0.0] - 2017-10-06
  - change default cache to null
  - First stable release

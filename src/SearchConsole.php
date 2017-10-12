@@ -41,6 +41,8 @@ class SearchConsole
     {
         $this->client->setAccessToken($accessToken);
 
+        $this->client->getGoogleClient()->getCache()->clear();
+
         return $this;
     }
 
