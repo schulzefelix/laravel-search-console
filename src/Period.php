@@ -13,7 +13,7 @@ class Period
     /** @var Carbon */
     public $endDate;
 
-    public static function create(Carbon $startDate, Carbon $endDate): Period
+    public static function create(Carbon $startDate, Carbon $endDate): self
     {
         return new static($startDate, $endDate);
     }
