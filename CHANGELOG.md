@@ -2,6 +2,9 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.1.1] - 2018-03-06
+ - Add Compatibility With Laravel 5.6
+
 ## [1.1.0] - 2017-10-12
  - Clear Cache on setAccessToken()
 
