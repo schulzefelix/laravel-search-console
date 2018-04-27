@@ -33,12 +33,16 @@ class SearchConsole
     }
 
     /**
-     * @param string $accessToken
+     * @param string|array $accessToken
      *
      * @return $this
      */
-    public function setAccessToken(string $accessToken)
+    public function setAccessToken($accessToken)
     {
+        if (is_array($accessToken)) {
+            $accessToken = trim(json_encode($accessToken));
+        }
+
         $this->client->setAccessToken($accessToken);
 
         $this->client->getGoogleClient()->getCache()->clear();
