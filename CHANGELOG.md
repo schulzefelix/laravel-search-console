@@ -2,6 +2,9 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.1.2] - 2018-04-27
+ - Accept JSON or Array as Access Token
+
 ## [1.1.1] - 2018-03-06
  - Add Compatibility With Laravel 5.6
 
