@@ -18,7 +18,7 @@ This package can be installed through Composer.
 $ composer require schulzefelix/laravel-search-console
 ```
 
-In Laravel 5.5 the package will autoregister the service provider. In Laravel 5.4 you must install this service provider.
+In Laravel 5.5 or higher the package will autoregister the service provider. In Laravel 5.4 you must install this service provider.
 ```php
 // config/app.php
 'providers' => [
@@ -28,7 +28,7 @@ In Laravel 5.5 the package will autoregister the service provider. In Laravel 5.
 ];
 ```
 
-In Laravel 5.5 the package will autoregister the facade. In Laravel 5.4 you must install the facade manually.
+In Laravel 5.5 or higher the package will autoregister the facade. In Laravel 5.4 you must install the facade manually.
 
 ```php
 // config/app.php

@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 
 class SearchConsoleClient
 {
-    const CHUNK_SIZE = 5000;
+    const CHUNK_SIZE = 25000;
 
     /**
      * @var Google_Client
@@ -33,6 +33,7 @@ class SearchConsoleClient
      * @param int $rows
      * @param \Google_Service_Webmasters_SearchAnalyticsQueryRequest $request
      * @return Collection
+     * @throws \Exception
      */
     public function performQuery($siteUrl, $rows, $request): Collection
     {
