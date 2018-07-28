@@ -55,7 +55,6 @@ class ExponentialBackoff
             try {
                 return call_user_func_array($function, $arguments);
             } catch (\Exception $exception) {
-
                 if ($this->retryFunction) {
                     if (! call_user_func($this->retryFunction, $exception)) {
                         throw $exception;
