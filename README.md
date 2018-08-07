@@ -161,7 +161,7 @@ public function public function isAccessTokenExpired(): Bool
 ### Set Access Token (Required)
 
 ```php
-$sites = SearchConsole::setAccessToken($token)->listSites());
+$sites = SearchConsole::setAccessToken($token)->listSites();
 ```
 
 ### Set Quota User
@@ -169,7 +169,7 @@ To avoid to the API limits, you can provide a unique string for the authenticate
 
 More information: https://developers.google.com/webmaster-tools/search-console-api-original/v3/limits
 ```php
-$sites = SearchConsole::setAccessToken($token)->setQuotaUser('uniqueQuotaUserString')->listSites());
+$sites = SearchConsole::setAccessToken($token)->setQuotaUser('uniqueQuotaUserString')->listSites();
 ```
 
 ## Get Underlying Service
