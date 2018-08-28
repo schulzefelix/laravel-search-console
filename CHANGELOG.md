@@ -2,7 +2,7 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
-## [1.1.3] - 2018-04-27
+## [1.1.3] - 2018-07-28
  - Set row limit to 25000
  - Throw authentication exceptions immediately 
 
