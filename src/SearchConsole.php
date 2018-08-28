@@ -50,6 +50,10 @@ class SearchConsole
         return $this;
     }
 
+    /**
+     * @param string $siteUrl
+     * @return array
+     */
     public function getSite(string $siteUrl)
     {
         $sites = $this->client->getWebmastersService()->sites;
@@ -84,12 +88,14 @@ class SearchConsole
     /**
      * Call the query method on the authenticated client.
      *
+     * @param string $siteUrl
      * @param Period $period
      * @param array $dimensions
      * @param array $filters
      * @param int $rows
      * @param string $searchType
      * @return Collection
+     * @throws \Exception
      */
     public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web')
     {

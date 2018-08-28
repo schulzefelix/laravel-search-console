@@ -119,7 +119,7 @@ Here are two basic example to retrieve all sites and an export for search analyt
 ### List Sites
 
 ```php
-$sites = SearchConsole::setAccessToken($token)->listSites());
+$sites = SearchConsole::setAccessToken($token)->listSites();
 ```
 
 ### Search Analytics
@@ -129,6 +129,7 @@ $sites = SearchConsole::setAccessToken($token)->listSites());
         ->searchAnalyticsQuery(
             'https://www.example.com/',
             Period::create(Carbon::now()->subDays(30), Carbon::now()->subDays(2)),
+            ['query', 'page', 'country', 'device', 'date'],
             [['dimension' => 'query', 'operator' => 'notContains', 'expression' => 'cheesecake']],
             1000,
             'web'
