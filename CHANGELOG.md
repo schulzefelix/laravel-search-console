@@ -2,6 +2,9 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.1.4] - 2018-10-30
+ - Add Compatibility With Laravel 5.7
+
 ## [1.1.3] - 2018-07-28
  - Set row limit to 25000
  - Throw authentication exceptions immediately 
