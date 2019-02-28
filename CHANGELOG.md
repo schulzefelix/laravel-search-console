@@ -2,6 +2,11 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
+## [1.2.0] - 2018-10-30
+ - Add Compatibility With Laravel 5.8
+ - drop support for Laravel 5.7 and lower
+ - drop support for PHP 7.1 and lower
+
 ## [1.1.4] - 2018-10-30
  - Add Compatibility With Laravel 5.7
 
