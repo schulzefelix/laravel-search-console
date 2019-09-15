@@ -12,33 +12,13 @@ Using this package you can easily retrieve data from Google Search Console API.
 
 ## Install
 
+> For Laravel 5.8, use version 1.2.0 of this package!
+
 This package can be installed through Composer.
 
 ``` bash
 $ composer require schulzefelix/laravel-search-console
 ```
-
-In Laravel 5.5 or higher the package will autoregister the service provider. In Laravel 5.4 you must install this service provider.
-```php
-// config/app.php
-'providers' => [
-    ...
-    SchulzeFelix\SearchConsole\SearchConsoleServiceProvider::class,
-    ...
-];
-```
-
-In Laravel 5.5 or higher the package will autoregister the facade. In Laravel 5.4 you must install the facade manually.
-
-```php
-// config/app.php
-'aliases' => [
-    ...
-    'SearchConsole' => SchulzeFelix\SearchConsole\SearchConsoleFacade::class,
-    ...
-];
-```
-
 
 Optionally, you can publish the config file of this package with this command:
 
