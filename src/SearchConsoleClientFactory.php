@@ -7,7 +7,6 @@ use GuzzleHttp\Client;
 use Google_Service_Webmasters;
 use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
-
 class SearchConsoleClientFactory
 {
     /**
