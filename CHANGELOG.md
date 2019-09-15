@@ -2,7 +2,7 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 
-## [1.6.0] - 2019-09-15
+## [1.3.0] - 2019-09-15
  - Add Compatibility With Laravel 6
  - drop support for Laravel 5.8 and lower
 
