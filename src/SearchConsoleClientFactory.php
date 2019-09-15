@@ -5,7 +5,8 @@ namespace SchulzeFelix\SearchConsole;
 use Google_Client;
 use GuzzleHttp\Client;
 use Google_Service_Webmasters;
-use Madewithlove\IlluminatePsrCacheBridge\Laravel\CacheItemPool;
+use Symfony\Component\Cache\Adapter\Psr16Adapter;
+
 
 class SearchConsoleClientFactory
 {
@@ -49,7 +50,7 @@ class SearchConsoleClientFactory
 
         $store = \Cache::store($config->get('store'));
 
-        $cache = new CacheItemPool($store);
+        $cache = new Psr16Adapter($store);
 
         $client->setCache($cache);
 

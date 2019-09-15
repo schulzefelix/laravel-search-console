@@ -66,12 +66,12 @@ class SearchConsoleClient
                  * https://productforums.google.com/forum/?hl=en#!topic/webmasters/wF_Rm9CGr4U
                  */
 
-                $uniqueHash = md5(str_random());
-                $item = [];
-
                 if (count($row->getKeys())) {
                     $item = array_combine($request->getDimensions(), $row->getKeys());
                     $uniqueHash = $this->getUniqueItemHash($row, $request);
+                } else {
+                    $uniqueHash = md5(Str::random(20));
+                    $item = [];
                 }
 
                 $item['clicks'] = $row->getClicks();
