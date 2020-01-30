@@ -6,6 +6,7 @@ use Google_Client;
 use GuzzleHttp\Client;
 use Google_Service_Webmasters;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Arr;
 
 class SearchConsoleClient
 {
@@ -105,7 +106,7 @@ class SearchConsoleClient
 
         $guzzleConfig = $this->googleClient->getHttpClient()->getConfig();
 
-        array_set($guzzleConfig, 'base_uri', Google_Client::API_BASE_PATH.'?quotaUser='.$quotaUser);
+        Arr::set($guzzleConfig, 'base_uri', Google_Client::API_BASE_PATH.'?quotaUser='.$quotaUser);
 
         $guzzleClient = new Client($guzzleConfig);
 
