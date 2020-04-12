@@ -87,14 +87,14 @@ class SearchConsoleClientFactory
         switch ($config['auth_type']):
             case 'oauth':
                 $client->setClientId($config['connections']['oauth']['client_id']);
-        $client->setClientSecret($config['connections']['oauth']['client_secret']);
-        break;
-        case 'oauth_json':
+                $client->setClientSecret($config['connections']['oauth']['client_secret']);
+                break;
+            case 'oauth_json':
                 $client->setAuthConfig($config['connections']['oauth_json']['auth_config']);
-        break;
-        case 'service_account':
+                break;
+            case 'service_account':
                 $client->useApplicationDefaultCredentials($config['connections']['service_account']['application_credentials']);
-        break;
+                break;
         endswitch;
     }
 }
