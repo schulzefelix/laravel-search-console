@@ -176,7 +176,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email githubissues@schulze.co instead of using the issue tracker.
+If you discover any security related issues, please email github@schulze.co instead of using the issue tracker.
 
 ## Credits
 
