@@ -1,6 +1,10 @@
 # Changelog
 
 All Notable changes to `laravel-search-console` will be documented in this file.
+## [1.4.0] - 2020-04-12
+ - Add Compatibility With Laravel 7
+ - Drop support for Laravel 6
+ - Minimum PHP 7.2.5
 
 ## [1.3.0] - 2019-09-15
  - Add Compatibility With Laravel 6
