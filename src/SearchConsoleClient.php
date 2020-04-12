@@ -3,10 +3,10 @@
 namespace SchulzeFelix\SearchConsole;
 
 use Google_Client;
-use GuzzleHttp\Client;
 use Google_Service_Webmasters;
-use Illuminate\Support\Collection;
+use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class SearchConsoleClient
 {
