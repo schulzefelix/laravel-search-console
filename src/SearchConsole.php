@@ -2,10 +2,10 @@
 
 namespace SchulzeFelix\SearchConsole;
 
-use Illuminate\Support\Collection;
 use Google_Service_Webmasters_ApiDimensionFilter;
 use Google_Service_Webmasters_ApiDimensionFilterGroup;
 use Google_Service_Webmasters_SearchAnalyticsQueryRequest;
+use Illuminate\Support\Collection;
 
 class SearchConsole
 {

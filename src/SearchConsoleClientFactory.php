@@ -3,8 +3,8 @@
 namespace SchulzeFelix\SearchConsole;
 
 use Google_Client;
-use GuzzleHttp\Client;
 use Google_Service_Webmasters;
+use GuzzleHttp\Client;
 use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
 class SearchConsoleClientFactory

@@ -2,9 +2,9 @@
 
 namespace SchulzeFelix\SearchConsole;
 
+use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
-use Illuminate\Foundation\Application as LaravelApplication;
 use SchulzeFelix\SearchConsole\Exceptions\InvalidConfiguration;
 
 class SearchConsoleServiceProvider extends ServiceProvider
