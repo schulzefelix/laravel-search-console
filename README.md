@@ -59,11 +59,11 @@ return [
         ],
  
         'oauth_json' => [
-            'auth_config' => env('GOOGLE_AUTH_CONFIG'),
+            'auth_config' => storage_path('app/searchconsole/oauth-account-credentials.json'),
         ],
  
         'service_account' => [
-            'application_credentials' => env('GOOGLE_APPLICATION_CREDENTIALS'),
+            'application_credentials' => storage_path('app/searchconsole/service-account-credentials.json'),
         ],
  
     ],
@@ -80,7 +80,7 @@ return [
      */
  
     'cache' => [
-        'store' => file,
+        'store' => 'file',
     ],
  
     /*

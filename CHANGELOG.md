@@ -1,6 +1,10 @@
 # Changelog
 
 All Notable changes to `laravel-search-console` will be documented in this file.
+## [1.5.0] - 2020-06-28
+ - Use full path for json account config files
+ - Removed files env vars
+ 
 ## [1.4.0] - 2020-04-12
  - Add Compatibility With Laravel 7
  - Drop support for Laravel 6
