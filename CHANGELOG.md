@@ -1,6 +1,11 @@
 # Changelog
 
 All Notable changes to `laravel-search-console` will be documented in this file.
+## [1.6.0] - 2020-09-14
+ - Add Compatibility With Laravel 8
+ - Drop support for Laravel 7
+ - Minimum PHP 7.3
+
 ## [1.5.0] - 2020-06-28
  - Use full path for json account config files
  - Removed files env vars
