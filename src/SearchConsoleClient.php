@@ -7,6 +7,7 @@ use Google_Service_Webmasters;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class SearchConsoleClient
 {
@@ -67,7 +68,7 @@ class SearchConsoleClient
                  * https://productforums.google.com/forum/?hl=en#!topic/webmasters/wF_Rm9CGr4U
                  */
 
-                if (count($row->getKeys())) {
+                if (is_array($row->getKeys()) && count($row->getKeys())) {
                     $item = array_combine($request->getDimensions(), $row->getKeys());
                     $uniqueHash = $this->getUniqueItemHash($row, $request);
                 } else {
