@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3|^8.0",
         "google/apiclient": "^2.0",
         "illuminate/support": "^8.0",
         "symfony/cache": "^4.3|^5.0"
