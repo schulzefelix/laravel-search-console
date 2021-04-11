@@ -2,8 +2,10 @@
 
 All Notable changes to `laravel-search-console` will be documented in this file.
 ## [1.7.0] - 2021-04-11
+- Add 'dataState' request and response parameter
+
+## [1.6.1] - 2021-03-09
 - Add Compatibility with PHP 8
-- Add 'dataState' request parameter
 
 ## [1.6.0] - 2020-09-14
  - Add Compatibility With Laravel 8
