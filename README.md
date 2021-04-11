@@ -113,7 +113,8 @@ $sites = SearchConsole::setAccessToken($token)->listSites();
             [['dimension' => 'query', 'operator' => 'notContains', 'expression' => 'cheesecake']],
             1000,
             'web',
-            'all'
+            'all',
+            'auto'
         );
 ```
 
@@ -130,7 +131,7 @@ public function public function listSites(): Collection
 
 ### Retrieve Search Analytics Data
 ```php
-public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final'): Collection
+public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final', string $aggregationType = 'auto'): Collection
 ```
 
 ### Check Access Token
