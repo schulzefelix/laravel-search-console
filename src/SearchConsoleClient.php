@@ -81,6 +81,7 @@ class SearchConsoleClient
                 $item['ctr'] = $row->getCtr();
                 $item['position'] = $row->getPosition();
                 $item['searchType'] = $request->getSearchType();
+                $item['dataState'] = $request->getDataState();
 
                 $dataRows->put($uniqueHash, $item);
             }
