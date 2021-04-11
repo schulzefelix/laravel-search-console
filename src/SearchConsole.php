@@ -94,10 +94,11 @@ class SearchConsole
      * @param array $filters
      * @param int $rows
      * @param string $searchType
+     * @param string $dataState
      * @return Collection
      * @throws \Exception
      */
-    public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = null)
+    public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final')
     {
         $request = new Google_Service_Webmasters_SearchAnalyticsQueryRequest();
         $request->setStartDate($period->startDate->toDateString());
