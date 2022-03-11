@@ -13,7 +13,7 @@ class SearchConsole
     protected $client;
 
     /**
-     * @param SearchConsoleClient $client
+     * @param  SearchConsoleClient  $client
      */
     public function __construct(SearchConsoleClient $client)
     {
@@ -21,8 +21,7 @@ class SearchConsole
     }
 
     /**
-     * @param string $quotaUser
-     *
+     * @param  string  $quotaUser
      * @return $this
      */
     public function setQuotaUser(string $quotaUser)
@@ -33,8 +32,7 @@ class SearchConsole
     }
 
     /**
-     * @param string|array $accessToken
-     *
+     * @param  string|array  $accessToken
      * @return $this
      */
     public function setAccessToken($accessToken)
@@ -51,7 +49,7 @@ class SearchConsole
     }
 
     /**
-     * @param string $siteUrl
+     * @param  string  $siteUrl
      * @return array
      */
     public function getSite(string $siteUrl)
@@ -88,15 +86,16 @@ class SearchConsole
     /**
      * Call the query method on the authenticated client.
      *
-     * @param string $siteUrl
-     * @param Period $period
-     * @param array $dimensions
-     * @param array $filters
-     * @param int $rows
-     * @param string $searchType
-     * @param string $dataState
-     * @param string $aggregationType
+     * @param  string  $siteUrl
+     * @param  Period  $period
+     * @param  array  $dimensions
+     * @param  array  $filters
+     * @param  int  $rows
+     * @param  string  $searchType
+     * @param  string  $dataState
+     * @param  string  $aggregationType
      * @return Collection
+     *
      * @throws \Exception
      */
     public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final', string $aggregationType = 'auto')
