@@ -10,7 +10,7 @@ use Symfony\Component\Cache\Adapter\Psr16Adapter;
 class SearchConsoleClientFactory
 {
     /**
-     * @param array $searchConsoleConfig
+     * @param  array  $searchConsoleConfig
      * @return SearchConsoleClient
      */
     public static function createForConfig(array $searchConsoleConfig): SearchConsoleClient
@@ -21,7 +21,7 @@ class SearchConsoleClientFactory
     }
 
     /**
-     * @param array $config
+     * @param  array  $config
      * @return Google_Client
      */
     public static function createAuthenticatedGoogleClient(array $config): Google_Client
@@ -40,7 +40,7 @@ class SearchConsoleClientFactory
     }
 
     /**
-     * @param Google_Client $client
+     * @param  Google_Client  $client
      * @param $config
      */
     protected static function configureCache(Google_Client $client, $config)
@@ -59,7 +59,7 @@ class SearchConsoleClientFactory
     }
 
     /**
-     * @param Google_Client $client
+     * @param  Google_Client  $client
      * @param $application_name
      */
     private static function configureGzip(Google_Client $client, $application_name)
@@ -79,12 +79,12 @@ class SearchConsoleClientFactory
     }
 
     /**
-     * @param Google_Client $client
+     * @param  Google_Client  $client
      * @param $config
      */
     private static function configureAuthentication(Google_Client $client, $config)
     {
-        switch ($config['auth_type']):
+        switch ($config['auth_type']) {
             case 'oauth':
                 $client->setClientId($config['connections']['oauth']['client_id']);
                 $client->setClientSecret($config['connections']['oauth']['client_secret']);
@@ -95,6 +95,6 @@ class SearchConsoleClientFactory
             case 'service_account':
                 $client->useApplicationDefaultCredentials($config['connections']['service_account']['application_credentials']);
                 break;
-        endswitch;
+        }
     }
 }

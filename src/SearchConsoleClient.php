@@ -22,7 +22,9 @@ class SearchConsoleClient
 
     /**
      * SearchConsoleClient constructor.
-     * @param Google_Client $googleClient
+     *
+     * @param  Google_Client  $googleClient
+     *
      * @internal param Google_Service_Webmasters $service
      */
     public function __construct(Google_Client $googleClient)
@@ -31,10 +33,11 @@ class SearchConsoleClient
     }
 
     /**
-     * @param string $siteUrl
-     * @param int $rows
-     * @param \Google_Service_Webmasters_SearchAnalyticsQueryRequest $request
+     * @param  string  $siteUrl
+     * @param  int  $rows
+     * @param  \Google_Service_Webmasters_SearchAnalyticsQueryRequest  $request
      * @return Collection
+     *
      * @throws \Exception
      */
     public function performQuery($siteUrl, $rows, $request): Collection
@@ -99,7 +102,7 @@ class SearchConsoleClient
     }
 
     /**
-     * @param string $quotaUser
+     * @param  string  $quotaUser
      */
     public function setQuotaUser(string $quotaUser)
     {
@@ -117,7 +120,7 @@ class SearchConsoleClient
     }
 
     /**
-     * @param string $accessToken
+     * @param  string  $accessToken
      */
     public function setAccessToken(string $accessToken)
     {

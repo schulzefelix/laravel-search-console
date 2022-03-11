@@ -26,7 +26,6 @@ class SearchConsoleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/search-console.php', 'search-console');
 
-
         $this->app->bind(SearchConsoleClient::class, function () {
             $searchConsoleConfig = config('search-console');
 
@@ -47,7 +46,8 @@ class SearchConsoleServiceProvider extends ServiceProvider
     }
 
     /**
-     * @param array|null $searchConsoleConfig
+     * @param  array|null  $searchConsoleConfig
+     *
      * @throws InvalidConfiguration
      */
     protected function guardAgainstInvalidConfiguration(array $searchConsoleConfig = null)
