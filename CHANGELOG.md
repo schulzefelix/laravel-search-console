@@ -1,6 +1,12 @@
 # Changelog
 
 All Notable changes to `laravel-search-console` will be documented in this file.
+## [1.8.0] - 2022-03-11
+- Add Compatibility With Laravel 9
+- Drop support for Laravel 8
+- Minimum PHP 8.0.2
+- Drop Support for Laravel Lumen
+
 ## [1.7.1] - 2021-04-11
 - Add 'AggregationType' request and response parameter
 

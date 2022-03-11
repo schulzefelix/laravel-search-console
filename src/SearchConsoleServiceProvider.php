@@ -2,9 +2,7 @@
 
 namespace SchulzeFelix\SearchConsole;
 
-use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Lumen\Application as LumenApplication;
 use SchulzeFelix\SearchConsole\Exceptions\InvalidConfiguration;
 
 class SearchConsoleServiceProvider extends ServiceProvider
@@ -28,13 +26,16 @@ class SearchConsoleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/search-console.php', 'search-console');
 
-        $searchConsoleConfig = config('search-console');
 
-        $this->app->bind(SearchConsoleClient::class, function () use ($searchConsoleConfig) {
+        $this->app->bind(SearchConsoleClient::class, function () {
+            $searchConsoleConfig = config('search-console');
+
             return SearchConsoleClientFactory::createForConfig($searchConsoleConfig);
         });
 
-        $this->app->bind(SearchConsole::class, function () use ($searchConsoleConfig) {
+        $this->app->bind(SearchConsole::class, function () {
+            $searchConsoleConfig = config('search-console');
+
             $this->guardAgainstInvalidConfiguration($searchConsoleConfig);
 
             $client = app(SearchConsoleClient::class);
@@ -64,11 +65,7 @@ class SearchConsoleServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/search-console.php');
 
-        if ($this->app instanceof LaravelApplication) {
-            $this->publishes([$source => config_path('search-console.php')]);
-        } elseif ($this->app instanceof LumenApplication) {
-            $this->app->configure('search-console');
-        }
+        $this->publishes([$source => config_path('search-console.php')]);
 
         $this->mergeConfigFrom($source, 'search-console');
     }

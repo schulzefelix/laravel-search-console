@@ -10,9 +10,20 @@
 
 Using this package you can easily retrieve data from Google Search Console API.
 
-## Install
+Here are a few examples of the provided methods:
 
-> For Laravel 5.8, use version 1.2.0 of this package!
+```php
+use SearchConsole;
+
+//list all available sites for that token
+SearchConsole::setAccessToken($token)->listSites();
+
+//get site details (permissionLevel) for specific site
+SearchConsole::setAccessToken($token)->getSite('http://blog.example.com/');
+```
+
+
+## Install
 
 This package can be installed through Composer.
 
@@ -105,6 +116,9 @@ $sites = SearchConsole::setAccessToken($token)->listSites();
 ### Search Analytics
 
 ```php
+use SearchConsole;
+use SchulzeFelix\SearchConsole\Period;
+
     $data = SearchConsole::setAccessToken($token)->setQuotaUser('uniqueQuotaUserString')
         ->searchAnalyticsQuery(
             'https://www.example.com/',
