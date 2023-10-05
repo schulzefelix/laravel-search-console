@@ -22,7 +22,7 @@
     "require": {
         "php": "^8.0.2",
         "google/apiclient": "^2.0",
-        "illuminate/support": "^9.0",
+        "illuminate/support": "*",
         "symfony/cache": "^6.0"
 
     },
